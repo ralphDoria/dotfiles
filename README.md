@@ -1,10 +1,8 @@
 # Dotfiles 
 
-The goal is to have a versatile dev environment -- dotfiles repo that can be easily pulled on any
-machine and set up quickly.
+The goal is to have a versatile dev environment that can be easily pulled on any machine and set up quickly.
 
 As I make the switch from VSCode to Neovim and learn the standard workflow, I'm trying to keep
-minimalistic.
+the setup minimalistic.
 
-Based on where the future of tech is heading, this will either teach me high ROI skills, or this is will
-just be another act of larping
+This will either teach me a bunch of high ROI skills, or end up being another larping hobby.
