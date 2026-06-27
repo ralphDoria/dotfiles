@@ -1,19 +1,26 @@
 #!/usr/bin/env sh
-# Symlinks nvim/ into the right config location on macOS / Linux.
+# Symlinks config directories into the right location on macOS / Linux.
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-TARGET="$CONFIG_HOME/nvim"
 
 mkdir -p "$CONFIG_HOME"
 
-# Back up a real (non-symlink) config if one exists.
-if [ -e "$TARGET" ] && [ ! -L "$TARGET" ]; then
-  echo "Backing up existing $TARGET -> $TARGET.bak"
-  mv "$TARGET" "$TARGET.bak"
-fi
+link_config() {
+  name="$1"
+  target="$CONFIG_HOME/$name"
 
-# -s symlink, -f overwrite, -n don't dereference an existing link-to-dir
-ln -sfn "$SCRIPT_DIR/nvim" "$TARGET"
-echo "Linked $SCRIPT_DIR/nvim -> $TARGET"
+  # Back up a real (non-symlink) config if one exists.
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "Backing up existing $target -> $target.bak"
+    mv "$target" "$target.bak"
+  fi
+
+  # -s symlink, -f overwrite, -n don't dereference an existing link-to-dir
+  ln -sfn "$SCRIPT_DIR/$name" "$target"
+  echo "Linked $SCRIPT_DIR/$name -> $target"
+}
+
+link_config nvim
+link_config yazi
