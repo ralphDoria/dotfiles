@@ -24,3 +24,4 @@ link_config() {
 
 link_config nvim
 link_config yazi
+link_config kitty
