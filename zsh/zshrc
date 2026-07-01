@@ -27,3 +27,4 @@ export EDITOR=nvim
 export PATH=$PATH:/snap/bin
 
 eval "$(starship init zsh)"
+source "$HOME/.cargo/env"
