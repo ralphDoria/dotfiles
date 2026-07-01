@@ -30,5 +30,7 @@ link_config() {
 link_config nvim
 link_config yazi
 link_config kitty
+link_config tmux
 
+link_file "$SCRIPT_DIR/starship/starship.toml" "$CONFIG_HOME/starship.toml"
 link_file "$SCRIPT_DIR/zsh/zshrc" "$HOME/.zshrc"
