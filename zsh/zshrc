@@ -24,5 +24,6 @@ unset __conda_setup
 export PATH="$HOME/.local/bin:$PATH"
 export NODE_EXTRA_CA_CERTS=~/certs.pem
 export EDITOR=nvim
+export PATH=$PATH:/snap/bin
 
 eval "$(starship init zsh)"
