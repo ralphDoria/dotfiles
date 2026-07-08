@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File 'C:\\Users\\rdori\\.claude-notify\\claude-toast.ps1' -Event Notification 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File 'C:\\Users\\rdori\\.claude-notify\\claude-toast.ps1' -Event Stop 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
