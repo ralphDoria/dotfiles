@@ -11,7 +11,7 @@ return {
     ts.setup({}) -- defaults; parsers land in stdpath("data")/site/parser
 
     local ensure = {
-      "c", "cpp", "lua", "vim", "vimdoc", "query", "bash",
+      "c", "cpp", "lua", "luau", "vim", "vimdoc", "query", "bash",
       "markdown", "markdown_inline",
     }
 
