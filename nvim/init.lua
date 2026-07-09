@@ -8,3 +8,4 @@ require("config.keymaps")
 
 -- Bootstrap the plugin manager and load everything in lua/plugins/.
 require("config.lazy")
+require("config.autocmds")
