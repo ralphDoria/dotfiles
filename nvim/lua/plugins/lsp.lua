@@ -28,6 +28,24 @@ return {
     })
     vim.lsp.enable("clangd")
 
+    -- lua_ls. Binary lives in ~/.local/share/lua-language-server, symlinked
+    -- onto PATH as lua-language-server.
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          runtime = { version = "LuaJIT" },
+          -- Teach it the Neovim API so `vim` isn't flagged as an undefined global.
+          diagnostics = { globals = { "vim" } },
+          workspace = {
+            library = { vim.env.VIMRUNTIME },
+            checkThirdParty = false,
+          },
+          telemetry = { enable = false },
+        },
+      },
+    })
+    vim.lsp.enable("lua_ls")
+
     -- Buffer-local keymaps, set once a server attaches.
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
