@@ -1,6 +1,9 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  -- `master`, not the 0.1.x release branch: 0.1.x is unmaintained (last commit
+  -- May 2024) and calls nvim-treesitter's removed `parsers.ft_to_lang`, which
+  -- errors on preview against nvim-treesitter `main`. master uses core's
+  -- vim.treesitter.language.get_lang instead.
   dependencies = {
     "nvim-lua/plenary.nvim",
     {
